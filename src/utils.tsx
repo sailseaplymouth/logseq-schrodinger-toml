@@ -159,16 +159,16 @@ async function parseMeta(
   
   //convert propList to Hugo yaml
   // https://gohugo.io/content-management/front-matter/
-  let ret = `---`;
+  let ret = `+++`;
   for (let [prop, value] of Object.entries(propList)) {
     if (Array.isArray(value)) {
       ret += `\n${prop}:`;
       value.forEach((element) => (ret += `\n- ${element}`));
     } else {
-      ret += `\n${prop}: ${value}`;
+      ret += `\n${prop} = '${value}'`;
     }
   }
-  ret += "\n---";
+  ret += "\n+++";
   return ret;
 }
 
