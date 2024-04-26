@@ -165,7 +165,7 @@ async function parseMeta(
       ret += `\n${prop}:`;
       value.forEach((element) => (ret += `\n- ${element}`));
     } else {
-      ret += `\n${prop} = '${value}'`;
+      ret += `\n${prop} = ${value}`;
     }
   }
   ret += "\n+++";
